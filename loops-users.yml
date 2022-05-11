@@ -1,0 +1,22 @@
+--- # my loops playbook
+- hosts: webservers
+  user: ansible
+  become: true
+  connection: ssh
+
+
+
+
+
+
+  tasks:
+    - name: creating multiple users
+      user: name='{{item}}' state=present
+      with_items:
+           - Raj
+           - Hari
+           - Krishna
+           - pooja
+           - Anu
+           - venu
+             
